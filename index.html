@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sonar — Username Lookup</title>
+  <link rel="icon" type="image/png" href="resources/icon.png">
+  <link rel="stylesheet" href="osint.css">
+</head>
+<body>
+  <video class="bg-video" autoplay muted loop playsinline aria-hidden="true">
+    <source src="resources/videoplayback.mp4" type="video/mp4">
+  </video>
+
+  <main class="app">
+    <header class="header">
+      <img class="brand-icon" src="resources/icon.png" alt="">
+      <div>
+        <h1>Sonar</h1>
+        <p class="subtitle">Check a username's footprint across platforms</p>
+      </div>
+    </header>
+
+    <form id="search-form" class="search-form">
+      <input
+        type="text"
+        id="username-input"
+        placeholder="Enter a username..."
+        autocomplete="off"
+        required
+      >
+      <button type="submit">Search</button>
+    </form>
+
+    <div class="variants">
+      <label class="variants-toggle">
+        <input type="checkbox" id="variants-toggle">
+        Also check variations <span class="group-note">(max 5, may match other people)</span>
+      </label>
+      <div id="variants-panel" class="variants-panel hidden">
+        <div id="variant-chips" class="variants-chips" aria-live="polite"></div>
+        <div class="variant-add">
+          <input type="text" id="custom-variant" placeholder="Add your own variation..." autocomplete="off" maxlength="30">
+          <button type="button" id="add-variant">Add</button>
+        </div>
+        <p id="variant-hint" class="variant-hint"></p>
+      </div>
+    </div>
+
+    <p id="status" class="status" aria-live="polite"></p>
+
+    <section id="results" class="results hidden">
+      <div class="results-group">
+        <h2 class="group-title">Verified <span class="group-note">(checked live via public API)</span></h2>
+        <div id="verified-grid" class="grid"></div>
+      </div>
+
+      <div class="results-group">
+        <h2 class="group-title">Manual check <span class="group-note">(click to confirm yourself)</span></h2>
+        <div id="manual-grid" class="grid"></div>
+      </div>
+    </section>
+
+    <footer class="disclaimer">
+      ⚠️For educational use and checking your own username footprint. Don't use this to
+      surveil or harass someone without their consent.
+    </footer>
+  </main>
+
+  <script src="osint.js"></script>
+</body>
+</html>
