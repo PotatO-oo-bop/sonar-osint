@@ -373,3 +373,79 @@ body::before {
 .card-variants a:hover {
   text-decoration: underline;
 }
+
+@media (max-width: 520px) {
+  body {
+    min-height: 100svh;
+    padding: 24px 12px 32px;
+  }
+
+  .app {
+    width: 100%;
+    padding: 20px 16px 16px;
+    gap: 18px;
+    border-radius: 14px;
+  }
+
+  .header {
+    gap: 10px;
+  }
+
+  .brand-icon {
+    width: 56px;
+    height: 56px;
+  }
+
+  .header h1 {
+    font-size: 24px;
+  }
+
+  .search-form {
+    flex-direction: column;
+  }
+
+  #username-input {
+    min-width: 0;
+    min-height: 48px;
+    font-size: 16px;
+  }
+
+  .search-form button {
+    min-height: 48px;
+  }
+
+  .variants-toggle {
+    align-items: flex-start;
+    line-height: 1.45;
+  }
+
+  .variants-toggle input {
+    width: 18px;
+    height: 18px;
+    flex: 0 0 auto;
+    margin: 1px 0 0;
+  }
+
+  .variant-add input,
+  .variant-add button {
+    min-height: 44px;
+  }
+
+  .variant-add input {
+    min-width: 0;
+    font-size: 16px;
+  }
+
+  .variant-add button {
+    padding: 8px 14px;
+  }
+
+  .grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .disclaimer {
+    padding-top: 14px;
+    overflow-wrap: anywhere;
+  }
+}
